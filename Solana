@@ -1,0 +1,38 @@
+*****************************************************************************
+******************************   Quickstart   *******************************
+*****************************************************************************
+
+1. yarn install
+2. yarn build
+
+#Build metaplex cli tools:
+3. yarn run package:macos
+        OR
+npx pkg . -d --targets node14-macos-x64 --output bin/macos/metaplex
+
+#Add metaplex cli to $PATH
+4. cp bin/macos/metaplex /usr/local/bin
+
+#Upload
+5. metaplex upload ./assets --env devnet -k your-keypair-path
+
+#Create file system wallet
+6. solana-keygen new --outfile ~/my-solana-wallet/my-keypair.json
+
+#Display pubkey:
+7. solana-keygen pubkey ~/my-solana-wallet/my-keypair.json
+
+#Verify pubkey
+8. solana-keygen verify <PUBKEY> ~/my-solana-wallet/my-keypair.json
+
+#Set active wallet
+9. solana config set --keypair ~/my-solana-wallet/my-keypair.json
+
+#Create candymachine
+10. metaplex create_candy_machine -e devnet -k ~/my-solana-wallet/my-keypair.json
+
+#Set start date
+11. metaplex set_start_date -k ~/my-solana-wallet/my-keypair.json -d "13 Sep 2021 15:00:00 GMT"
+
+#Mint an NFT to wallet
+12. metaplex mint_one_token -e devnet -k ~/my-solana-wallet/my-keypair.json

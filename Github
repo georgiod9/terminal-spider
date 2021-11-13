@@ -1,0 +1,44 @@
+            **********
+            **github**
+            **********
+
+*****************************************************************************
+********************   Upload project to existing repo   ********************
+*****************************************************************************
+
+1. git init                                 //initialize local repo
+2. git add .                                //add all contents of workspace
+3. git commit                               //initial commit necessary
+4. git remote add origin <github repo url>  //add origin as remote
+5. git commit -m "initial commit"
+6. git push -u origin master                //push project to newly linked repo
+
+
+
+*****************************************************************************
+**************************   Rebase branches   ******************************
+*****************************************************************************
+
+#This happens when two branches have entirely different commit histories
+
+1. git checkout <branch name you want to merge>
+
+#branch to rebase with: branch that you want the checked out branch to be in the same place in git history
+2. git reset --soft <branch to rebase with>
+
+3. git commit -m "message"
+
+#you may need to run --force if your push gets rejected
+4. git push origin <current checked out branch>
+
+
+*****************************************************************************
+**************************   Delete branches   ******************************
+*****************************************************************************
+
+#delete local branch
+git branch -d <local branch name>
+
+
+#delete remote branch
+git push origin --delete <remote branch name>
